@@ -77,12 +77,12 @@ public class Main
 		  return false;\\not palaindrome
 	    }  
 	}
-	
+}	
 
             }
             else if (x == 9) {
-
-
+            	Main x = new Main();
+            	x.primeNum();
             }
             else if (x == 10) {
 
@@ -129,10 +129,46 @@ public class Main
 
 
 
+        public void primeNum()
+        {
+        	Scanner cin = new Scanner(System.in);
+    		int arr[] = new int[200];
+    		
+    		System.out.println("Enter the number of elements:");
+    		int index = cin.nextInt();
+    		
+    		
+    		System.out.println("Enter the " + index + " elements:");
+    		for(int i = 0; i < index; i++)
+    			arr[i] = cin.nextInt();
+    		cin.close();
+    		
+    		Lprime x = new Lprime();
+    		int least = 1000000000;
+    		boolean chk = false;
+    		for(int i = 0; i < arr.length; i++)
+    			if(x.primeCheck(arr, i) && arr[i] < least)
+    			{
+    				chk = true;
+    				least  = arr[i];
+    			}
+    		if(chk == true)
+    			System.out.println("The Least Prime Is: " + least);
+    		else
+    			System.out.println("None are prime!!");
+        }
 
 
-
-
+        public boolean primeCheck(int arr[], int indx)
+    	{
+    		if(arr[indx] == 0 || arr[indx] == 1)
+    			return false;
+    		else
+    			for(int i = 2; i < arr[indx]; i++)
+    				if(arr[indx] % i == 0)
+    					return false;
+    		return true;
+    	}
 
 
     public static int countprime (int [] arr)
