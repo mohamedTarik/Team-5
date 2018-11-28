@@ -5,10 +5,11 @@ public class Main
 
     public static void main(String[] args)
     {
-        int y=1;
 
+        int y=1;
         while(y==1)
         {
+
             Scanner in = new Scanner(System.in);
             System.out.println("Size of Array");
             int x = in.nextInt();
@@ -16,13 +17,19 @@ public class Main
             System.out.println("Enter numbers");
             for (int i = 0; i < x; i++)
                 arr[i] = in.nextInt();
+            System.out.println("Please Enter String");
+            String word= in.nextLine();
             System.out.println("Choose Function: ");
             System.out.println("0 For all Functions: ");
             System.out.println("1 For Countprime: ");
+            System.out.println("8 For Palindrom: ");
+            System.out.println("9 For Finding Smallest primenumber: ");
             x = in.nextInt();
+
             if (x == 0) {
                 System.out.println("Total prime number in Arr = " + countprime(arr));
-
+                System.out.println("Check palindrom: " + isPalindrome(word)  );
+                System.out.println(primeNum(arr))
 
             }
             else if (x == 1) {
@@ -55,34 +62,12 @@ public class Main
 
             }
             else if (x == 8) {
-public class Main
-{
-	public static boolean isPalindrome(String inputString){
-    int length  = inputString.length();
-    int i, begin, end, middle;
-    begin  = 0;
-    end    = length - 1;
-    middle = (begin + end)/2;
-		for (i = begin; i <= middle; i++) {
-			if (inputString.charAt(begin) == inputString.charAt(end)) {
-			   begin++;
-			   end--;
-			}else {
-				break;
-			}
-		}
-		if (i == middle + 1) {
-		  return true;
-		}else {
-		  return false;\\not palaindrome
-	    }  
-	}
-}	
+              System.out.println("Check palindrom: " +isPalindrome(word));
 
             }
             else if (x == 9) {
-            	Main x = new Main();
-            	x.primeNum();
+              System.out.println(primeNum(arr))
+
             }
             else if (x == 10) {
 
@@ -126,49 +111,45 @@ public class Main
 
         }
     }
+  
 
 
 
-        public void primeNum()
+    public static int primeNum(int arr [])
+    {
+
+        int least = 1000000000;
+        boolean chk = false;
+
+        for(int i = 0; i < arr.length; i++)
+            if(primeCheck(arr[i]) && arr[i] < least)
+            {
+                chk = true;
+                least  = arr[i];
+            }
+        if(chk == true)
         {
-        	Scanner cin = new Scanner(System.in);
-    		int arr[] = new int[200];
-    		
-    		System.out.println("Enter the number of elements:");
-    		int index = cin.nextInt();
-    		
-    		
-    		System.out.println("Enter the " + index + " elements:");
-    		for(int i = 0; i < index; i++)
-    			arr[i] = cin.nextInt();
-    		cin.close();
-    		
-    		Lprime x = new Lprime();
-    		int least = 1000000000;
-    		boolean chk = false;
-    		for(int i = 0; i < arr.length; i++)
-    			if(x.primeCheck(arr, i) && arr[i] < least)
-    			{
-    				chk = true;
-    				least  = arr[i];
-    			}
-    		if(chk == true)
-    			System.out.println("The Least Prime Is: " + least);
-    		else
-    			System.out.println("None are prime!!");
+            System.out.println("The Least Prime Is: ");
+            return least;
         }
+            else
+        {
+            System.out.println("None are prime!!");
+            return -1;
+        }
+    }
+    public static boolean  primeCheck(int arr)
+    {
+        if(arr== 0 || arr == 1 ||arr == 2)
+            return false;
+        else
+            for(int i = 2; i <arr; i++)
+                if(arr % i == 0)
+                    return false;
+        return true;
+    }
 
 
-        public boolean primeCheck(int arr[], int indx)
-    	{
-    		if(arr[indx] == 0 || arr[indx] == 1)
-    			return false;
-    		else
-    			for(int i = 2; i < arr[indx]; i++)
-    				if(arr[indx] % i == 0)
-    					return false;
-    		return true;
-    	}
 
 
     public static int countprime (int [] arr)
@@ -193,6 +174,31 @@ public class Main
         }
     return counter;
     }
+
+  
+    public static boolean isPalindrome(String inputString){
+        int length  = inputString.length();
+        int i, begin, end, middle;
+        begin  = 0;
+        end    = length - 1;
+        middle = (begin + end)/2;
+        for (i = begin; i <= middle; i++) {
+            if (inputString.charAt(begin) == inputString.charAt(end)) {
+                begin++;
+                end--;
+            }else {
+                break;
+            }
+        }
+        if (i == middle + 1) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
+
 
 }
 
