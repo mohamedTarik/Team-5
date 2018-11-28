@@ -5,10 +5,11 @@ public class Main
 
     public static void main(String[] args)
     {
-        int y=1;
 
+        int y=1;
         while(y==1)
         {
+
             Scanner in = new Scanner(System.in);
             System.out.println("Size of Array");
             int x = in.nextInt();
@@ -16,13 +17,17 @@ public class Main
             System.out.println("Enter numbers");
             for (int i = 0; i < x; i++)
                 arr[i] = in.nextInt();
+            System.out.println("Please Enter String");
+            String word= in.nextLine();
             System.out.println("Choose Function: ");
             System.out.println("0 For all Functions: ");
             System.out.println("1 For Countprime: ");
+            System.out.println("8 For Palindrom: ");
             x = in.nextInt();
+
             if (x == 0) {
                 System.out.println("Total prime number in Arr = " + countprime(arr));
-
+                System.out.println("Check palindrom: " + isPalindrome(word)  );
 
             }
             else if (x == 1) {
@@ -55,6 +60,7 @@ public class Main
 
             }
             else if (x == 8) {
+                System.out.println("Check palindrom: " +isPalindrome(word));
 
 
             }
@@ -135,6 +141,30 @@ public class Main
         }
     return counter;
     }
+
+    public static boolean isPalindrome(String inputString){
+        int length  = inputString.length();
+        int i, begin, end, middle;
+        begin  = 0;
+        end    = length - 1;
+        middle = (begin + end)/2;
+        for (i = begin; i <= middle; i++) {
+            if (inputString.charAt(begin) == inputString.charAt(end)) {
+                begin++;
+                end--;
+            }else {
+                break;
+            }
+        }
+        if (i == middle + 1) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
+
 
 }
 
