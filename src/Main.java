@@ -23,11 +23,13 @@ public class Main
             System.out.println("0 For all Functions: ");
             System.out.println("1 For Countprime: ");
             System.out.println("8 For Palindrom: ");
+            System.out.println("9 For Finding Smallest primenumber: ");
             x = in.nextInt();
 
             if (x == 0) {
                 System.out.println("Total prime number in Arr = " + countprime(arr));
                 System.out.println("Check palindrom: " + isPalindrome(word)  );
+                System.out.println(primeNum(arr))
 
             }
             else if (x == 1) {
@@ -60,16 +62,11 @@ public class Main
 
             }
             else if (x == 8) {
-
-<<<<<<< HEAD
-=======
-                System.out.println("Check palindrom: " +isPalindrome(word));
-
->>>>>>> 67e5585f2aa66750990df730cab702f15b6f682e
+              System.out.println("Check palindrom: " +isPalindrome(word));
 
             }
             else if (x == 9) {
-
+              System.out.println(primeNum(arr))
 
             }
             else if (x == 10) {
@@ -114,11 +111,43 @@ public class Main
 
         }
     }
+  
 
 
 
+    public static int primeNum(int arr [])
+    {
 
+        int least = 1000000000;
+        boolean chk = false;
 
+        for(int i = 0; i < arr.length; i++)
+            if(primeCheck(arr[i]) && arr[i] < least)
+            {
+                chk = true;
+                least  = arr[i];
+            }
+        if(chk == true)
+        {
+            System.out.println("The Least Prime Is: ");
+            return least;
+        }
+            else
+        {
+            System.out.println("None are prime!!");
+            return -1;
+        }
+    }
+    public static boolean  primeCheck(int arr)
+    {
+        if(arr== 0 || arr == 1 ||arr == 2)
+            return false;
+        else
+            for(int i = 2; i <arr; i++)
+                if(arr % i == 0)
+                    return false;
+        return true;
+    }
 
 
 
@@ -146,6 +175,7 @@ public class Main
     return counter;
     }
 
+  
     public static boolean isPalindrome(String inputString){
         int length  = inputString.length();
         int i, begin, end, middle;
