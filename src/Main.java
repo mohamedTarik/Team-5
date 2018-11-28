@@ -60,6 +60,7 @@ public class Main
 
             }
             else if (x == 8) {
+
                 System.out.println("Check palindrom: " +isPalindrome(word));
 
 
