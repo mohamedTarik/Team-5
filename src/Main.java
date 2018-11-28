@@ -161,9 +161,9 @@ public class Main
             }
         }
         if (i == middle + 1) {
-            return true;
+            return true;\\ yes its palandrome 
         }else {
-            return false;
+            return false;\\not palandrome
         }
     }
 
