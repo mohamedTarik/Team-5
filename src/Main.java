@@ -1,18 +1,16 @@
-import java.util.Scanner;
-
 public class Main
 {
- public void AVERAGE (double[]arr) {
+ public void AVERAGE (int[]arr) {
         // double[] arr = {19, 12.89, 16.5, 200, 13.7};
-         double total = 0;
+         int total = 0;
 
          for(int i=0; i<arr.length; i++){
              total = total + arr[i];
          }
-         double average = total / arr.length;
+         int average = total / arr.length;
 
 
-         System.out.format("The average is: %.3f", average);
+         System.out.print( average);
 
      }
 
@@ -38,12 +36,13 @@ public class Main
             System.out.println("1 For Countprime: ");
             System.out.println("8 For Palindrom: ");
             System.out.println("9 For Finding Smallest primenumber: ");
+              System.out.println("15 For Average: ");
             x = in.nextInt();
 
             if (x == 0) {
                 System.out.println("Total prime number in Arr = " + countprime(arr));
                 System.out.println("Check palindrom: " + isPalindrome(word)  );
-                System.out.println(primeNum(arr))
+//                System.out.println(primeNum(arr))
 
             }
             else if (x == 1) {
@@ -80,7 +79,7 @@ public class Main
 
             }
             else if (x == 9) {
-              System.out.println(primeNum(arr))
+             // System.out.println(primeNum(arr))
 
             }
             else if (x == 10) {
@@ -104,7 +103,8 @@ public class Main
 
             }
             else if (x == 15) {
-AVERAGE(arr);
+                Main m=new Main();
+                m.AVERAGE(arr);
 
             }
             else if (x == 16) {
@@ -205,16 +205,18 @@ AVERAGE(arr);
             }
         }
         if (i == middle + 1) {
-            return true;\\ yes its palandrome 
+        //    return true;\\ yes its palandrome 
         }else {
-            return false;\\not palandrome
+          //  return false;\\not palandrome
         }
+     return false;
     }
 
 
 
 
 }
+
 
 
 
