@@ -1,8 +1,8 @@
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.Vector;
+import sun.applet.Main;
 
-public class Main
+import java.util.*;
+
+public class Main12
 {
 
 
@@ -26,6 +26,7 @@ public class Main
 			System.out.println("Choose Function: ");
 			System.out.println("0 For all Functions: ");
 			System.out.println("1 For Countprime: ");
+			System.out.println("3 For Distinct array: ");
 			System.out.println("8 For Palindrom: ");
 			System.out.println("9 For Finding Smallest primenumber: ");
 			System.out.println("11 For Most Repeated Value: ");
@@ -43,6 +44,8 @@ public class Main
 				System.out.println("Most Repeated Value");
 				Most_Repeted_Value(arr);
 				System.out.println("");
+				System.out.println("The Distinc array:");
+				Distinct(arr);
 
 			}
 			else if (x == 1) {
@@ -55,6 +58,9 @@ public class Main
 			}
 
 			else if (x == 3) {
+				System.out.println("The Distinc array:");
+
+				Distinct(arr);
 
 
 			}
@@ -104,7 +110,7 @@ public class Main
 
 			}
 			else if (x == 15) {
-				Main m=new Main();
+				Main12 m=new Main12();
 				m.AVERAGE(arr);
 
 			}
@@ -294,6 +300,37 @@ public class Main
 
 		System.out.println("Most Repeted Value is : " + V.get(0));
 		System.out.println("its Counts : " + Counts.get(0));
+
+
+	}
+
+
+	public static void Distinct(int []arr)
+	{
+
+		String temp="";
+		String collect="";
+		boolean flag=false;
+		int x;
+
+		for (int i = 0; i < arr.length; i++)
+		{
+			collect+=arr[i];
+			collect+=" ";
+		}
+		ArrayList<String> values= new ArrayList<String>(Arrays.asList(collect.split(" ")));
+		ArrayList<String> add=new ArrayList<>();
+
+		for(int i=0;i<values.size();i++){
+
+			x=add.indexOf(values.get(i));
+
+		 	if(x==-1)
+				add.add(values.get(i));
+		}
+
+		for(int i=0;i<add.size();i++)
+			System.out.print(add.get(i)+" ");
 
 
 	}
