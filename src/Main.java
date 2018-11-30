@@ -24,6 +24,7 @@ public class Main
             System.out.println("Choose Function: ");
             System.out.println("0 For all Functions: ");
             System.out.println("1 For Countprime: ");
+			System.out.println("3 For Distinct array: ");
             System.out.println("8 For Palindrom: ");
             System.out.println("9 For Finding Smallest primenumber: ");
             System.out.println("15 For Average: ");
@@ -48,7 +49,8 @@ public class Main
             }
 
             else if (x == 3) {
-
+				System.out.println("The Distinc array:");
+                   Distinct(arr);
 
             }
             else if (x == 4) {
@@ -223,6 +225,29 @@ public class Main
 
         System.out.print( average);
 
+    }
+	public static void Distinct(int []arr) {
+		String temp="";
+		String collect="";
+        boolean flag=false;
+        int x;
+        for (int i = 0; i < arr.length; i++) {
+        	collect+=arr[i];
+        	collect+=" ";}
+      ArrayList<String> values= new ArrayList<String>(Arrays.asList(collect.split(" ")));
+      ArrayList<String> add=new ArrayList<>();
+     for(int i=0;i<values.size();i++){
+    	 
+    	  x=add.indexOf(values.get(i));
+    	 if(x==-1)
+    		 add.add(values.get(i));
+        	
+        		
+        }
+     for(int i=0;i<add.size();i++)
+        System.out.print(add.get(i)+" ");
+
+           
     }
 
 
