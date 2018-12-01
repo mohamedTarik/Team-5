@@ -30,6 +30,7 @@ public class Main12
 			System.out.println("8 For Palindrom: ");
 			System.out.println("9 For Finding Smallest primenumber: ");
 			System.out.println("11 For Most Repeated Value: ");
+			System.out.println("12 for reverse array: ");
 			System.out.println("15 For Average: ");
 
 
@@ -46,6 +47,7 @@ public class Main12
 				System.out.println("");
 				System.out.println("The Distinc array:");
 				Distinct(arr);
+				ReverseArray(arr);
 
 			}
 			else if (x == 1) {
@@ -98,7 +100,7 @@ public class Main12
 
 			}
 			else if (x == 12) {
-
+			ReverseArray(arr);
 
 			}
 			else if (x == 13) {
@@ -334,6 +336,14 @@ public class Main12
 
 
 	}
+		public static void ReverseArray(int[]arr){
+                int b[]=new int[arr.length];
+                for (int i =0 ; i<arr.length; i++){
+                    
+                    b[i]=arr[arr.length-i-1];
+                    System.out.println(b[i]);
+                }
+                }
 }
 
 
