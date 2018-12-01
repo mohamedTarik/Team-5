@@ -29,6 +29,7 @@ public class Main12
 			System.out.println("3 For Distinct array: ");
 			System.out.println("8 For Palindrom: ");
 			System.out.println("9 For Finding Smallest primenumber: ");
+                        System.out.println("10 For Finding max prime number: ");
 			System.out.println("11 For Most Repeated Value: ");
  			System.out.println("12 for reverse array: "); 
 			System.out.println("14 for greatest 3 numbers");
@@ -95,6 +96,8 @@ public class Main12
 
 			}
 			else if (x == 10) {
+                            System.out.println("maxprime:");
+                            getMaxPrime();
 
 
 
@@ -371,9 +374,77 @@ public class Main12
             
             b[i]=arr[arr.length-i-1];
             System.out.println(b[i]);
+            
+            public static void getMaxPrime(int []arr)
+ 
+   {
+
+        int sz=arr.length;
+ 
+ 
+        int [] arr1;
+  
+          arr1 = new int[sz];
+
+ 
+       
+        
+        int i=0,z=0;
+ 
+       while(i<sz)
+ 
+       {
+            int c=0;
+ 
+           for(int j=2; j<=arr[i]; j++)
+
+            {
+               
+ if(arr[i]%j==0 && arr[i]!=j)
+ 
+               {
+                    
+c++;
+                    break;
+                }
+
+
+            }
+   
+         if(c==0)
+ 
+           {arr1[z]=arr[i];z++;} i++;
+ 
+       
         }
-        }
+        
+                
+int t=arr1[0];
+ 
+       for(int ii=0; z>ii; ii++)
+ 
+       {
+
+                if(arr1[ii]>t)
+
+                {
+                    t=arr1[ii];
+
+
+                }
+            
+        
 }
+        
+System.out.print("the max prime is : "+ t );   
+     
+}
+	}  
+
+
+        
+        
+
 
 
 
