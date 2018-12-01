@@ -1,13 +1,12 @@
 import sun.applet.Main;
 import java.util.*;
 import java.util.Arrays;
- 
+
 public class Main12
 {
 
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 
 		int y=1;
 		while(y==1)
@@ -29,11 +28,12 @@ public class Main12
 			System.out.println("3 For Distinct array: ");
 			System.out.println("8 For Palindrom: ");
 			System.out.println("9 For Finding Smallest primenumber: ");
-                        System.out.println("10 For Finding max prime number: ");
 			System.out.println("11 For Most Repeated Value: ");
- 			System.out.println("12 for reverse array: "); 
+			System.out.println("12 for reverse array: ");
 			System.out.println("14 for greatest 3 numbers");
 			System.out.println("15 For Average: ");
+			System.out.println("17 for getting prime numbers");
+
 
 
 			x = in.nextInt();
@@ -50,9 +50,9 @@ public class Main12
 				System.out.println("The Distinc array:");
 				Distinct(arr);
 				GetMaximum3Numbers(arr);
- 				ReverseArray(arr); 
+				ReverseArray(arr);
 
-				
+
 
 			}
 			else if (x == 1) {
@@ -96,8 +96,6 @@ public class Main12
 
 			}
 			else if (x == 10) {
-                            System.out.println("maxprime:");
-                            getMaxPrime();
 
 
 
@@ -107,7 +105,7 @@ public class Main12
 
 			}
 			else if (x == 12) {
-	 			ReverseArray(arr); 
+				ReverseArray(arr);
 			}
 			else if (x == 13) {
 
@@ -128,11 +126,12 @@ public class Main12
 
 			}
 			else if (x == 17) {
+				ArrayList<Integer> primeArray = new ArrayList<Integer>();
+				primeArray = returnPrimes(arr);
+				System.out.println("Prime Numbers : " + primeArray ) ;
 
 
 			}
-
-
 
 
 			System.out.println("Press one if you want to restart");
@@ -141,13 +140,11 @@ public class Main12
 
 		}
 	}
-
-
 	public static void GetMaximum3Numbers(int arr[]) {
 		/*int biggest1 = getmax(arr);
 		int arr1[];
 		arr1 = Arrays.*/
-		
+
 		int biggest1 = arr[0];
 		for(int i:arr) {
 			if(i>biggest1) {
@@ -168,10 +165,7 @@ public class Main12
 		}
 		System.out.println(biggest1 + ", " +biggest2 + ", " + biggest3);
 	}
-
-
-	public static int primeNum(int arr [])
-	{
+	public static int primeNum(int arr []) {
 
 		int least = 1000000000;
 		boolean chk = false;
@@ -193,8 +187,7 @@ public class Main12
 			return -1;
 		}
 	}
-	public static boolean  primeCheck(int arr)
-	{
+	public static boolean  primeCheck(int arr) {
 		if(arr== 0 || arr == 1)
 			return false;
 		else
@@ -203,12 +196,7 @@ public class Main12
 					return false;
 		return true;
 	}
-
-
-
-
-	public static int countprime (int [] arr)
-	{
+	public static int countprime (int [] arr) {
 		int counter=0;
 		Boolean checker;
 
@@ -229,8 +217,6 @@ public class Main12
 		}
 		return counter;
 	}
-
-
 	public static boolean isPalindrome(String inputString){
 		int length  = inputString.length();
 		int i, begin, end, middle;
@@ -255,11 +241,7 @@ public class Main12
 		}
 
 	}
-
-
-
-	public static void AVERAGE (int[]arr)
-	{
+	public static void AVERAGE (int[]arr) {
 		// double[] arr = {19, 12.89, 16.5, 200, 13.7};
 		int total = 0;
 
@@ -272,8 +254,6 @@ public class Main12
 		System.out.print( average);
 
 	}
-
-
 	public static void bubbleSort(Vector<Integer> z, Vector<Integer> ch) {
 		int[] arr = new int[z.size()];
 		int[] arr2 = new int[ch.size()];
@@ -303,7 +283,6 @@ public class Main12
 			ch.add(arr2[a]);
 		}
 	}
-
 	public static void Most_Repeted_Value(int[] s_Arr) {
 		//int [] s_Arr={1,5,2,4,1,8,8,4,1,2,3,6,5,1,4,1,2,1};
 		Vector<Integer> V = new Vector<>();
@@ -337,10 +316,7 @@ public class Main12
 
 
 	}
-
-
-	public static void Distinct(int []arr)
-	{
+	public static void Distinct(int []arr) {
 
 		String temp="";
 		String collect="";
@@ -359,7 +335,7 @@ public class Main12
 
 			x=add.indexOf(values.get(i));
 
-		 	if(x==-1)
+			if(x==-1)
 				add.add(values.get(i));
 		}
 
@@ -369,82 +345,34 @@ public class Main12
 
 	}
 	public static void ReverseArray(int[]arr){
-        int b[]=new int[arr.length];
-        for (int i =0 ; i<arr.length; i++){
-            
-            b[i]=arr[arr.length-i-1];
-            System.out.println(b[i]);
-            
-            public static void getMaxPrime(int []arr)
- 
-   {
+		int b[]=new int[arr.length];
+		for (int i =0 ; i<arr.length; i++){
 
-        int sz=arr.length;
- 
- 
-        int [] arr1;
-  
-          arr1 = new int[sz];
+			b[i]=arr[arr.length-i-1];
+			System.out.println(b[i]);
+		}
+	}
+	public static boolean isPrime(int number) {
+		int sqrt = (int) Math.sqrt(number) + 1;
+		for (int i = 2; i < sqrt; i++) {
+			if (number % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static ArrayList<Integer> returnPrimes(int[]arr){
+		ArrayList<Integer> primeArray = new ArrayList<Integer>();
+		for(int i =0 ; i< arr.length ;i++ )
+		{
+			if(isPrime(arr[i])){
+				primeArray.add(arr[i]);
+			}
+		}
+		return primeArray;
+	}
 
- 
-       
-        
-        int i=0,z=0;
- 
-       while(i<sz)
- 
-       {
-            int c=0;
- 
-           for(int j=2; j<=arr[i]; j++)
-
-            {
-               
- if(arr[i]%j==0 && arr[i]!=j)
- 
-               {
-                    
-c++;
-                    break;
-                }
-
-
-            }
-   
-         if(c==0)
- 
-           {arr1[z]=arr[i];z++;} i++;
- 
-       
-        }
-        
-                
-int t=arr1[0];
- 
-       for(int ii=0; z>ii; ii++)
- 
-       {
-
-                if(arr1[ii]>t)
-
-                {
-                    t=arr1[ii];
-
-
-                }
-            
-        
 }
-        
-System.out.print("the max prime is : "+ t );   
-     
-}
-	}  
-
-
-        
-        
-
 
 
 
