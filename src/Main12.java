@@ -51,6 +51,10 @@ public class Main12
 				Distinct(arr);
 				GetMaximum3Numbers(arr);
 				ReverseArray(arr);
+				/*Prime Numbers */
+				ArrayList<Integer> primeArray = new ArrayList<Integer>();
+				primeArray = returnPrimes(arr);
+				System.out.println("Prime Numbers : " + primeArray ) ;
 
 
 
