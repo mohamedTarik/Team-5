@@ -1,5 +1,4 @@
 import sun.applet.Main;
-
 import java.util.*;
 import java.util.Arrays;
  
@@ -193,7 +192,7 @@ public class Main12
 	}
 	public static boolean  primeCheck(int arr)
 	{
-		if(arr== 0 || arr == 1 ||arr == 2)
+		if(arr== 0 || arr == 1)
 			return false;
 		else
 			for(int i = 2; i <arr; i++)
@@ -220,7 +219,7 @@ public class Main12
 				}
 			}
 
-			if(checker && arr[i]!= 0 && arr[i]!= 1 && arr[i]!=2)
+			if(checker && arr[i]!= 0 && arr[i]!= 1)
 			{
 				counter++;
 			}
