@@ -1,7 +1,8 @@
 import sun.applet.Main;
 
 import java.util.*;
-
+import java.util.Arrays;
+ 
 public class Main12
 {
 
@@ -30,7 +31,8 @@ public class Main12
 			System.out.println("8 For Palindrom: ");
 			System.out.println("9 For Finding Smallest primenumber: ");
 			System.out.println("11 For Most Repeated Value: ");
-			System.out.println("12 for reverse array: ");
+ 			System.out.println("12 for reverse array: "); 
+			System.out.println("14 for greatest 3 numbers");
 			System.out.println("15 For Average: ");
 
 
@@ -47,7 +49,10 @@ public class Main12
 				System.out.println("");
 				System.out.println("The Distinc array:");
 				Distinct(arr);
-				ReverseArray(arr);
+				GetMaximum3Numbers(arr);
+ 				ReverseArray(arr); 
+
+				
 
 			}
 			else if (x == 1) {
@@ -100,14 +105,14 @@ public class Main12
 
 			}
 			else if (x == 12) {
-			ReverseArray(arr);
-
+	 			ReverseArray(arr); 
 			}
 			else if (x == 13) {
 
 
 			}
 			else if (x == 14) {
+				GetMaximum3Numbers(arr);
 
 
 			}
@@ -136,6 +141,31 @@ public class Main12
 	}
 
 
+	public static void GetMaximum3Numbers(int arr[]) {
+		/*int biggest1 = getmax(arr);
+		int arr1[];
+		arr1 = Arrays.*/
+		
+		int biggest1 = arr[0];
+		for(int i:arr) {
+			if(i>biggest1) {
+				biggest1 = i;
+			}
+		}
+		int biggest2 = arr[0];
+		for(int i:arr) {
+			if(i > biggest2 && i!=biggest1) {
+				biggest2 = i;
+			}
+		}
+		int biggest3 = arr[0];
+		for(int i:arr) {
+			if(i>biggest3 && i!=biggest1 && i!=biggest2) {
+				biggest3 = i;
+			}
+		}
+		System.out.println(biggest1 + ", " +biggest2 + ", " + biggest3);
+	}
 
 
 	public static int primeNum(int arr [])
@@ -336,14 +366,14 @@ public class Main12
 
 
 	}
-		public static void ReverseArray(int[]arr){
-                int b[]=new int[arr.length];
-                for (int i =0 ; i<arr.length; i++){
-                    
-                    b[i]=arr[arr.length-i-1];
-                    System.out.println(b[i]);
-                }
-                }
+	public static void ReverseArray(int[]arr){
+        int b[]=new int[arr.length];
+        for (int i =0 ; i<arr.length; i++){
+            
+            b[i]=arr[arr.length-i-1];
+            System.out.println(b[i]);
+        }
+        }
 }
 
 
