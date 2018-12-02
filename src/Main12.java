@@ -26,6 +26,7 @@ public class Main12
 			System.out.println("0 For all Functions: ");
 			System.out.println("1 For Countprime: ");
 			System.out.println("3 For Distinct array: ");
+			System.out.println("6 for smallest 3 numbers");
 			System.out.println("8 For Palindrom: ");
 			System.out.println("9 For Finding Smallest primenumber: ");
 			System.out.println("11 For Most Repeated Value: ");
@@ -33,8 +34,8 @@ public class Main12
 			System.out.println("14 for greatest 3 numbers");
 			System.out.println("15 For Average: ");
 			System.out.println("17 for getting prime numbers");
-
-
+			
+			
 
 			x = in.nextInt();
 
@@ -55,9 +56,9 @@ public class Main12
 				ArrayList<Integer> primeArray = new ArrayList<Integer>();
 				primeArray = returnPrimes(arr);
 				System.out.println("Prime Numbers : " + primeArray ) ;
-
-
-
+				GetMinimum3Numbers(arr);
+			
+				
 			}
 			else if (x == 1) {
 				System.out.println("Total prime number in Arr = " + countprime(arr));
@@ -84,7 +85,7 @@ public class Main12
 
 			}
 			else if (x == 6) {
-
+				GetMinimum3Numbers(arr);
 
 			}
 			else if (x == 7) {
@@ -168,6 +169,13 @@ public class Main12
 			}
 		}
 		System.out.println(biggest1 + ", " +biggest2 + ", " + biggest3);
+	}
+	public static void GetMinimum3Numbers(int arr[]) {
+		int n = arr.length;
+		Arrays.sort(arr);
+		for(int i = 0 ; i < Math.min(3, n) ; i++) {
+			System.out.print(arr[i] + " ");
+		}System.out.println();
 	}
 	public static int primeNum(int arr []) {
 
@@ -377,9 +385,3 @@ public class Main12
 	}
 
 }
-
-
-
-
-
-
